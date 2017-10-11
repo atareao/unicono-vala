@@ -1,0 +1,18 @@
+Source: unicono-vala
+Section: utils
+Priority: extra
+Maintainer: Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+Build-Depends: cmake (>= 2.8),
+               debhelper (>= 9.0),
+               dh-autoreconf,
+               valac (>=0.34),
+Standards-Version: 3.9.4
+Homepage: http://www.atareao.es
+
+Package: unicono-vala
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Pre-Depends: dpkg (>= 1.15.6)
+Description: Unicono Vala
+ Un ejemplo de crear un paquete con vala

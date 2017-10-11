@@ -1,0 +1,1 @@
+install(FILES ubuntu.svg DESTINATION share/icons/hicolor/scalable/apps)
