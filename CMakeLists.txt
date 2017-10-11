@@ -8,10 +8,10 @@ cmake_policy(VERSION 2.8)
 
 #We define out project name.
 SET(CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "")
-project(equival)
+project(unicono)
 
-set (PACKAGE "equival")
-set (RELEASE_NAME "Flow")
+set (PACKAGE "unicono")
+set (RELEASE_NAME "first")
 set (VERSION_MAJOR "0")
 set (VERSION_MINOR "1")
 set (VERSION_STATUS "0")
@@ -27,7 +27,7 @@ set (VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_STATUS}-${VERSION_BUIL
 set (AUTHOR "Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>")
 set (COPYRIGHT "Copyright (c) 2017 Lorenzo Carbonell")
 set (LICENSE "GPLV3")
-set (URL "http://www.atareao.es")
+set (URL "https://www.atareao.es")
 
 set (BINDIR "${CMAKE_INSTALL_PREFIX}/bin")
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
@@ -36,8 +36,8 @@ set (GETTEXT_PACKAGE "${PACKAGE}")
 add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 set (CMAKE_C_FLAGS "-ggdb")
 
-configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
-configure_file (${CMAKE_SOURCE_DIR}/data/${PACKAGE}.desktop.cmake ${CMAKE_SOURCE_DIR}/data/${PACKAGE}.desktop.in)
+#configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
+#configure_file (${CMAKE_SOURCE_DIR}/data/${PACKAGE}.desktop.cmake ${CMAKE_SOURCE_DIR}/data/${PACKAGE}.desktop.in)
 
 #Here we load the modules we downloaded earlier and placed into the ./cmake directory
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake )
@@ -50,11 +50,11 @@ include (ValaPrecompile)
 
 find_package(PkgConfig)
 
-configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-    IMMEDIATE @ONLY
-)
+#configure_file(
+#    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+#    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+#    IMMEDIATE @ONLY
+#)
 
 add_custom_target(
     uninstall

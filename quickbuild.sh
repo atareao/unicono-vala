@@ -1,8 +1,9 @@
 #!/bin/bash
 #echo $1
 #
-EMAIL=lorenzo.carbonell.cerezo@gmail.com
-SIGN=k2962A198
+EMAIL=tudireccion@email.com
+SIGN=TUHUELLA
+PPA="ppa:usuario/ppa"
 #
 APPVERSION=$(head -n 1 debian/changelog)
 APP=`expr "$APPVERSION" : '\(.* (\)'`
@@ -69,8 +70,8 @@ clean()
 	rm -f debian/files
 }
 upload(){
-	debuild -S -sa -I.bzr -$SIGN
-	dput ppa:atareao/test ../"$APP"_"$VERSION"_source.changes
+	debuild -S -sa -I.bzr -k$SIGN
+	dput "$PPA" ../"$APP"_"$VERSION"_source.changes
 }
 build(){
 	# We need to make our build directory for all of our temp files.
